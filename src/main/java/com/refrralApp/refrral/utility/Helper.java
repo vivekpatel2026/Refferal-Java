@@ -7,5 +7,6 @@ import org.springframework.stereotype.Component;
 import java.util.Iterator;
 @Component
 public class Helper {
-
+    public Helper() {
     }
+}
