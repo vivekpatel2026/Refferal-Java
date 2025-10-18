@@ -174,6 +174,7 @@ public class Candidate {
     }
 
     public void setUpdatedAt(LocalDateTime updatedAt) {
+
         this.updatedAt = updatedAt;
     }
 }
