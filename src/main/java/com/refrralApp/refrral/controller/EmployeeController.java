@@ -33,8 +33,8 @@ public class EmployeeController {
         EmployeeGetProfileDTO employee=employeeServices.getEmployeeProfile(email,Long.parseLong(EmployeeId));
         return ResponseEntity.ok(Map.of("message", "Employee profile fetch successfully", "status"," success","data",employee));
     }
-    @PutMapping("/update-profile")
 
+    @PutMapping("/update-profile")
     public ResponseEntity<?> updateProfile(HttpServletRequest request,@RequestBody JsonNode updates)throws JsonProcessingException {
         String email = (String) request.getAttribute("email");
         String EmployeeId=(String) request.getAttribute("userId");
