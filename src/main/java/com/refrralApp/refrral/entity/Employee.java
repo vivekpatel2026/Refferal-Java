@@ -28,7 +28,7 @@ public class Employee {
     private String email;
 
     @NotBlank
-    @Size(min = 6,message = "password must be min 6 charcter ")
+    @Size(min = 6,message = "password must be min 6 character ")
     private String password;
     @ManyToOne
     @JoinColumn(name = "company_id",nullable = true)
