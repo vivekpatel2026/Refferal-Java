@@ -10,6 +10,7 @@ import com.refrralApp.refrral.repository.CompanyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -42,4 +43,13 @@ public class ApplicationServices {
     }
 
 
+    public List<Application> getAllApplication(String email, long candidateId) {
+        Optional<Candidate> optionalCandidate = candidateRepository.findByIdAndEmail(candidateId, email);
+        if (!optionalCandidate.isPresent()) {
+            throw new RuntimeException("Candidate does not exist");
+        }
+
+        List<Application> applications = applicationRespository.findByCandidateId(candidateId);
+        return applications;
+    }
 }

@@ -45,9 +45,11 @@ public class Application {
     private String resume;
 
     @OneToMany(mappedBy = "application", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnoreProperties
     private List<EmployeeViewedApplication> viewedBy;
 
     @OneToMany(mappedBy = "application", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnoreProperties
     private List<EmployeeReferral> referrals;
 
     @NotBlank
