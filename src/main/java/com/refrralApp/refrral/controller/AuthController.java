@@ -2,8 +2,8 @@ package com.refrralApp.refrral.controller;
 
 import com.refrralApp.refrral.Services.AuthServices;
 import com.refrralApp.refrral.dto.CandidateGetProfileDTO;
-import com.refrralApp.refrral.dto.CandidateRagisterRequest;
-import com.refrralApp.refrral.dto.EmployeeRagisetrRequest;
+import com.refrralApp.refrral.dto.request.CandidateRagisterRequest;
+import com.refrralApp.refrral.dto.request.EmployeeRagisetrRequest;
 import com.refrralApp.refrral.entity.Candidate;
 import com.refrralApp.refrral.entity.Employee;
 import com.refrralApp.refrral.utility.JwtUtility;

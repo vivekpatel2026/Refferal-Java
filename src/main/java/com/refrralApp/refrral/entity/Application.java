@@ -1,6 +1,9 @@
 package com.refrralApp.refrral.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.refrralApp.refrral.dto.request.CreateApplicationRequest;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
@@ -23,13 +26,15 @@ public class Application {
 
     @ManyToOne
     @JoinColumn(name = "candidate_id", nullable = false)
+    @JsonIgnoreProperties({"applications", "otherSensitiveFields"})
     private Candidate candidate;
 
     @ManyToOne
     @JoinColumn(name = "company_id", nullable = false)
+    @JsonIgnoreProperties({"applications", "otherFieldYouWantToHide"})
     private Company company;
 
-    @NotBlank
+    @NotBlank(message = "target role can not be blank")
     private String targetRole;
 
     @ElementCollection
@@ -156,5 +161,19 @@ public class Application {
 
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public Application(CreateApplicationRequest application) {
+        this.candidate=application.getCandidate();
+        this.projectLinks=application.getProjectLinks();
+        this.resume=application.getResume();
+        this.targetRole=application.getTargetRole();
+        this.customPitch=application.getCustomPitch();
+        this.videoPitch=application.getVideoPitch();
+        this.company=application.getCompany();
+        this.status="submitted";
+    }
+
+    public Application() {
     }
 }
