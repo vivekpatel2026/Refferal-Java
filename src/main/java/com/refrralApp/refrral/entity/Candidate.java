@@ -1,6 +1,7 @@
 package com.refrralApp.refrral.entity;
 
-import com.refrralApp.refrral.dto.CandidateRagisterRequest;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.refrralApp.refrral.dto.request.CandidateRagisterRequest;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -33,6 +34,7 @@ public class Candidate {
     private String phone;
     @NotBlank
     @Size(min = 6 ,message = "password must be ta least 6 character ")
+    @JsonIgnore
     private String password;
     private String collegeName;
     private String collegeCity;

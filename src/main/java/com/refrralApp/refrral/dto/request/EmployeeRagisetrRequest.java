@@ -1,4 +1,4 @@
-package com.refrralApp.refrral.dto;
+package com.refrralApp.refrral.dto.request;
 
 import jakarta.persistence.Column;
 import jakarta.validation.constraints.Email;

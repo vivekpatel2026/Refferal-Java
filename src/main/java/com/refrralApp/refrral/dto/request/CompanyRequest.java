@@ -1,4 +1,4 @@
-package com.refrralApp.refrral.dto;
+package com.refrralApp.refrral.dto.request;
 
 import jakarta.validation.constraints.NotBlank;
 

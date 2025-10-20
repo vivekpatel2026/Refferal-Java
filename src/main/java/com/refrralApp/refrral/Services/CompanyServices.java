@@ -1,7 +1,7 @@
 package com.refrralApp.refrral.Services;
 
 import com.refrralApp.refrral.dto.CompanyDTO;
-import com.refrralApp.refrral.dto.CompanyRequest;
+import com.refrralApp.refrral.dto.request.CompanyRequest;
 import com.refrralApp.refrral.entity.Company;
 import com.refrralApp.refrral.entity.Employee;
 import com.refrralApp.refrral.repository.CompanyRepository;

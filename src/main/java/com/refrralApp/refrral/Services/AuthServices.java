@@ -1,7 +1,7 @@
 package com.refrralApp.refrral.Services;
 
-import com.refrralApp.refrral.dto.CandidateRagisterRequest;
-import com.refrralApp.refrral.dto.EmployeeRagisetrRequest;
+import com.refrralApp.refrral.dto.request.CandidateRagisterRequest;
+import com.refrralApp.refrral.dto.request.EmployeeRagisetrRequest;
 import com.refrralApp.refrral.entity.Candidate;
 import com.refrralApp.refrral.entity.Employee;
 import com.refrralApp.refrral.repository.CandidateRepository;
