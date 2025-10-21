@@ -52,4 +52,16 @@ public class ApplicationServices {
         List<Application> applications = applicationRespository.findByCandidateId(candidateId);
         return applications;
     }
+
+    public Application getOneApplication(String email, long candidateId, Long applicationId) {
+        Optional<Candidate> optionalCandidate=candidateRepository.findByIdAndEmail(candidateId,email);
+        if(!optionalCandidate.isPresent()){
+            throw new RuntimeException("candidate not exist");
+        }
+        Optional<Application> application= applicationRespository.findById(applicationId);
+        if(!application.isPresent()){
+            throw  new RuntimeException("Application not present...");
+        }
+        return application.get();
+    }
 }

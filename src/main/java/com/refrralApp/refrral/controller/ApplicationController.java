@@ -33,6 +33,14 @@ public class ApplicationController {
         List<Application> allApplication=applicationServices.getAllApplication(email,Long.parseLong(candidateId));
         return ResponseEntity.ok(Map.of("status","success","message","candidate all application","data",allApplication));
     }
+    //get our one application by candidate
+    @GetMapping("/{applicationId}")
+    public ResponseEntity<?> getOneApplication(HttpServletRequest request,@PathVariable Long applicationId){
+        String email = (String) request.getAttribute("email");
+        String candidateId=(String) request.getAttribute("userId");
+        Application application=applicationServices.getOneApplication(email,Long.parseLong(candidateId),applicationId);
+        return ResponseEntity.ok(Map.of("status","success","message","application fetch successfully","data",application));
+    }
 
 
 }
