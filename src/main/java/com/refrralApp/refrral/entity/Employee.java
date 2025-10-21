@@ -1,7 +1,8 @@
 package com.refrralApp.refrral.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.refrralApp.refrral.dto.EmployeeRagisetrRequest;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.refrralApp.refrral.dto.request.EmployeeRagisetrRequest;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -28,11 +29,12 @@ public class Employee {
     private String email;
 
     @NotBlank
-    @Size(min = 6,message = "password must be min 6 charcter ")
+    @Size(min = 6,message = "password must be min 6 character ")
+    @JsonIgnore
     private String password;
     @ManyToOne
     @JoinColumn(name = "company_id",nullable = true)
-    @JsonIgnore
+    @JsonIgnoreProperties({"applications", "otherFieldYouWantToHide"})
     private Company company;
     private Boolean isVerified = false;
     // Referrals made by employee

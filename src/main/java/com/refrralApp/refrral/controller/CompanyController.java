@@ -1,10 +1,8 @@
 package com.refrralApp.refrral.controller;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.refrralApp.refrral.Services.CompanyServices;
 import com.refrralApp.refrral.dto.CompanyDTO;
-import com.refrralApp.refrral.dto.CompanyRequest;
+import com.refrralApp.refrral.dto.request.CompanyRequest;
 import com.refrralApp.refrral.utility.CompanyIdNameProjection;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,11 +1,9 @@
 package com.refrralApp.refrral.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.refrralApp.refrral.dto.CompanyRequest;
-import com.refrralApp.refrral.repository.CompanyRepository;
+import com.refrralApp.refrral.dto.request.CompanyRequest;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
-import org.slf4j.Marker;
 
 import java.util.List;
 
